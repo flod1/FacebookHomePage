@@ -27,16 +27,19 @@ module.exports = function (grunt) {
             js_lib: {
                 src: [
                     './bower_components/jquery/dist/jquery.js',
-                    './bower_components/jquery-validate/dist/jquery.validate.js',
+                    //'./bower_components/jquery-validate/dist/jquery.validate.js',
                     './bower_components/bootstrap/dist/js/bootstrap.js',
-                    './bower_components/bootstrap3-dialog/dist/js/bootstrap-dialog.js',
+                    //'./bower_components/bootstrap3-dialog/dist/js/bootstrap-dialog.js',
                     './bower_components/matchmedia/matchMedia.js',
                     //'./bower_components/jquery.selectBoxIt.js/src/javascripts/jquery.selectBoxIt.js',
-                    './bower_components/jquery-placeholder/jquery.placeholder.js',
-                    './bower_components/bootstrap-select/dist/js/bootstrap-select.js',
-                    './bower_components/jquery-touchswipe/jquery.touchSwipe.js',
-                    './bower_components/SocialShare/SocialShare.min.js',
-                    './bower_components/wow/dist/wow.min.js',
+                    //'./bower_components/jquery-placeholder/jquery.placeholder.js',
+                    //'./bower_components/bootstrap-select/dist/js/bootstrap-select.js',
+                    //'./bower_components/jquery-touchswipe/jquery.touchSwipe.js',
+                    //'./bower_components/SocialShare/SocialShare.min.js',
+                    //'./bower_components/wow/dist/wow.min.js',
+                    './bower_components/prism/prism.js',
+                    './bower_components/prism/components/prism-php.js',
+                    './bower_components/prism/components/prism-php-extra.js',
                     //'./bower_components/webfontloader/webfontloader.js',
                     //'<%= globalConfig.src %>js/lib/**/*.js'
                 ],
@@ -44,7 +47,7 @@ module.exports = function (grunt) {
             },
             js_frontend: {
                 src: [
-                    '<%= globalConfig.src %>js/foreignxperts/**/*.js'
+                    '<%= globalConfig.src %>js/frontend/**/*.js'
                 ],
                 dest: '<%= globalConfig.dest %>js/frontend.js'
             }
@@ -118,7 +121,7 @@ module.exports = function (grunt) {
                 tasks: ['concat:js_lib']     //tasks to run
             },
             js_frontend: {
-                files: ['<%= globalConfig.src %>js/foreignxperts/**/*.js'],  //watched files
+                files: ['<%= globalConfig.src %>js/frontend/**/*.js'],  //watched files
                 tasks: ['concat:js_frontend'],     //tasks to run
                 options: {
                     livereload: true                        //reloads the browser

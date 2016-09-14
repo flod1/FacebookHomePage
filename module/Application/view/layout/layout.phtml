@@ -26,26 +26,20 @@
     //Loading Resources
     if (defined("APPLICATION_ENV") && APPLICATION_ENV === 'development') {
         //All Stylesheets
-        //$this->view->headLink()->appendStylesheet('css/bootstrap.min.css');
         $this->headLink()->appendStylesheet($this->basePath('css/bootstrap.css'));
         $this->headLink()->appendStylesheet($this->basePath('css/bootstrap-theme.css'));
-        $this->headLink()->appendStylesheet($this->basePath('css/full-slider.css'));
         //$this->view->headLink()->appendStylesheet('font-awesome/css/font-awesome.min.css');
         //Javascripts
-        //$this->headScript()->appendFile($this->basePath('js/lib.js', 'text/javascript'));
-       // $this->headScript()->appendFile($this->basePath('js/frontend.js', 'text/javascript'));
+        $this->headScript()->appendFile($this->basePath('js/lib.js', 'text/javascript'));
+        $this->headScript()->appendFile($this->basePath('js/frontend.js', 'text/javascript'));
     } else {
         //All Stylesheets
-        //$this->view->headLink()->appendStylesheet('css/bootstrap.min.css');
         $this->headLink()->appendStylesheet($this->basePath('css/bootstrap.min.css'));
         //Javascripts
+        $this->headScript()->appendFile($this->basePath('js/bootstrap.min.js'));
     }
 
-    $this->headScript()->appendFile($this->basePath('js/bootstrap.min.js'));
 
-    //Prism
-    $this->headLink()->appendStylesheet($this->basePath('css/prism.css'));
-    $this->headScript()->appendFile($this->basePath('js/prism.js'));
 
     $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath('favicon.ico')));
     //->prependStylesheet($this->basePath('css/style.css'))
@@ -54,11 +48,7 @@
 
     echo $this->headLink(); ?>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="css/full-slider.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
