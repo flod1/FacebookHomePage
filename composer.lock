@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c95cdaf6c1a6209d81305c1bb837a611",
+    "hash": "16ea176f07f1ab344d155d9db69f0df5",
     "content-hash": "a32e35473bcf621953bad709afe607a4",
     "packages": [
         {
@@ -148,16 +148,11 @@
         {
             "name": "flod1/facebook-api",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/flod1/FacebookApi.git",
-                "reference": "c26da7be8989a252d3c82751b4d78327263125b5"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/flod1/FacebookApi/zipball/c26da7be8989a252d3c82751b4d78327263125b5",
-                "reference": "c26da7be8989a252d3c82751b4d78327263125b5",
-                "shasum": ""
+                "type": "path",
+                "url": "module/FacebookApi",
+                "reference": "4002151d1dfce1c5b27f0a0a184b8b9c66ab7c93",
+                "shasum": null
             },
             "require": {
                 "facebook/graph-sdk": "^5.3",
@@ -189,11 +184,9 @@
                 "graph api",
                 "zf2"
             ],
-            "support": {
-                "source": "https://github.com/flod1/FacebookApi/tree/master",
-                "issues": "https://github.com/flod1/FacebookApi/issues"
-            },
-            "time": "2016-09-14 06:07:27"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "myclabs/deep-copy",
