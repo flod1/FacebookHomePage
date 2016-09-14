@@ -53,10 +53,40 @@ return array(
                     ),
                 ),
             ),
+            'graphnode' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route' => '/graph[/:id]',
+                    'defaults' => array(
+                        'controller' => 'graph_controller',
+                        'action'     => 'node',
+                    ),
+                ),
+            ),
+            'graphedge' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route' => '/graph/[:id]/[:edge]',
+                    'defaults' => array(
+                        'controller' => 'graph_controller',
+                        'action'     => 'edge',
+                    ),
+                ),
+            ),
             'examples' => array(
                 'type' => 'Segment',
                 'options' => array(
                     'route' => '/examples',
+                    'defaults' => array(
+                        'controller' => 'example_controller',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'widgets' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route' => '/widgets',
                     'defaults' => array(
                         'controller' => 'example_controller',
                         'action'     => 'widgets',
@@ -91,6 +121,9 @@ return array(
             'example_controller' => 'Application\Controller\ExampleController',
             'Application\Controller\Index' => Controller\IndexController::class
         ),
+        'factories' => array(
+            'graph_controller' => 'Application\Factory\Controller\GraphControllerFactory'
+        ),
     ),
     'view_manager' => array(
         'display_not_found_reason' => true,
@@ -121,6 +154,10 @@ return array(
             array(
                 'label' => 'Dashboard',
                 'route' => 'fbpage_dashboard',
+            ),
+            array(
+                'label' => 'Widgets',
+                'route' => 'widgets',
             ),
             array(
                 'label' => 'Examples',

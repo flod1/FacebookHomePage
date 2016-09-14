@@ -1,0 +1,52 @@
+<h2><? echo $graphNodeType;?> :: <a href="<? echo $this->url("graphnode", array("id" => $graphNode->getField("id"))); ?>"><?echo $graphNode->getField("name")?></a> -> <? echo $graphEdgeType;?></h2>
+<table class="table-bordered table table-responsive">
+    <thead>
+    <tr>
+        <?
+
+        //var_dump($graphEdge);die();
+        foreach ($graphEdge AS $item) {
+            //var_dump($item->getFieldNames());
+            /* @var $item Facebook\GraphNodes\GraphNode */
+            $fieldnames = $item->getFieldNames();
+            foreach ($fieldnames AS $fieldName) {
+                ?>
+                <td><? echo $fieldName; ?></td>
+                <?
+            }
+            break;
+        }
+        ?>
+        <td>Detail</td>
+    </tr>
+
+    </thead>
+    <tbody>
+    <?
+    foreach ($graphEdge AS $item) {
+        /* @var $item Facebook\GraphNodes\GraphNode */
+        ?>
+        <tr>
+            <?
+            foreach ($fieldnames AS $fieldName) {
+                $field = $item->getField($fieldName);
+                ?>
+                <td>
+                    <? echo $this->graphfield($fieldName,$field); ?>&nbsp;
+                </td>
+                <?
+            }
+            ?>
+            <td>
+                <a href="<? echo $this->url("graphnode", array("id" => $item->getField("id"))); ?>">More</a>
+            </td>
+        </tr>
+
+        <?
+        //var_dump($item);
+    }
+    ?>
+    </tbody>
+</table>
+
+

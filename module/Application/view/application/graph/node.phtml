@@ -1,0 +1,45 @@
+<?
+$item = $graphNode;
+?>
+<h2><? echo $graphNodeType;?> :: <a href="<? echo $this->url("graphnode", array("id" => $graphNode->getField("id"))); ?>"><?echo $graphNodeTitle?></a></h2>
+<table class="table-bordered table table-responsive">
+    <thead class="thead-default">
+    <tr>
+        <td><? echo $this->translate("Key");?> </td>
+        <td><? echo $this->translate("Value");?> </td>
+    </tr>
+
+    </thead>
+    <tbody>
+    <?
+    /* @var $item Facebook\GraphNodes\GraphNode */
+    $fieldnames = $item->getFieldNames();
+    foreach ($fieldnames AS $fieldName) {
+        $field = $item->getField($fieldName);
+
+        ?>
+        <tr>
+            <td><? echo $fieldName; ?></td>
+            <td>
+                <? echo $this->graphfield($fieldName,$field); ?>&nbsp;
+            </td>
+        </tr>
+        <?
+    }
+
+    if(isset($graphEdges)){
+        foreach ($graphEdges AS $edge) {
+            ?>
+            <tr>
+                <td><? echo $edge['key']; ?></td>
+                <td>
+                    <a href="<? echo $this->url("graphedge",array("id"=>$item->getField("id"),"edge"=>$edge['key']));?>"><? echo $edge['count'];?></a>&nbsp;
+                </td>
+            </tr>
+            <?
+        }
+    }
+
+    ?>
+    </tbody>
+</table>

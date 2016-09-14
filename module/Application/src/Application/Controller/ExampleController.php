@@ -11,9 +11,15 @@ namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Zend\View\View;
 
 class ExampleController extends AbstractActionController
 {
+    public function indexAction(){
+        var_dump($this->params()->fromRoute());
+        return new ViewModel();
+
+    }
     public function widgetsAction(){
 
         $examples = array();
