@@ -1,0 +1,25 @@
+body{
+  margin-top: @navbar-height;
+}
+
+.container{
+  .xs({
+    width: 100%
+  });
+  .sm({
+    width: 100%
+  });
+  .md({
+    width: 100%
+  });
+  .lg({
+    width: 100%
+  });
+}
+
+.anchor{
+  display: block;
+  height: @navbar-height; /*same height as header*/
+  margin-top: -@navbar-height; /*same height as header*/
+  visibility: hidden;
+}

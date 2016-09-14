@@ -1395,7 +1395,7 @@ html {
 /* line 27, bower_components\bootstrap\less\scaffolding.less */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.42857143;
   color: #333333;
   background-color: #fff;
@@ -1465,8 +1465,8 @@ img {
 }
 /* line 113, bower_components\bootstrap\less\scaffolding.less */
 hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 17px;
+  margin-bottom: 17px;
   border: 0;
   border-top: 1px solid #eeeeee;
 }
@@ -1549,8 +1549,8 @@ h2,
 .h2,
 h3,
 .h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: 17px;
+  margin-bottom: 8.5px;
 }
 /* line 30, bower_components\bootstrap\less\type.less */
 h1 small,
@@ -1574,8 +1574,8 @@ h5,
 .h5,
 h6,
 .h6 {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 8.5px;
+  margin-bottom: 8.5px;
 }
 /* line 41, bower_components\bootstrap\less\type.less */
 h4 small,
@@ -1595,54 +1595,54 @@ h6 .small,
 /* line 47, bower_components\bootstrap\less\type.less */
 h1,
 .h1 {
-  font-size: 36px;
+  font-size: 31px;
 }
 /* line 48, bower_components\bootstrap\less\type.less */
 h2,
 .h2 {
-  font-size: 30px;
+  font-size: 25px;
 }
 /* line 49, bower_components\bootstrap\less\type.less */
 h3,
 .h3 {
-  font-size: 24px;
+  font-size: 21px;
 }
 /* line 50, bower_components\bootstrap\less\type.less */
 h4,
 .h4 {
-  font-size: 18px;
+  font-size: 15px;
 }
 /* line 51, bower_components\bootstrap\less\type.less */
 h5,
 .h5 {
-  font-size: 14px;
+  font-size: 12px;
 }
 /* line 52, bower_components\bootstrap\less\type.less */
 h6,
 .h6 {
-  font-size: 12px;
+  font-size: 11px;
 }
 /* line 58, bower_components\bootstrap\less\type.less */
 p {
-  margin: 0 0 10px;
+  margin: 0 0 8.5px;
 }
 /* line 62, bower_components\bootstrap\less\type.less */
 .lead {
-  margin-bottom: 20px;
-  font-size: 16px;
+  margin-bottom: 17px;
+  font-size: 13px;
   font-weight: 300;
   line-height: 1.4;
 }
 @media (min-width: 768px) {
   /* line 68, bower_components\bootstrap\less\type.less */
   .lead {
-    font-size: 21px;
+    font-size: 18px;
   }
 }
 /* line 78, bower_components\bootstrap\less\type.less */
 small,
 .small {
-  font-size: 85%;
+  font-size: 91%;
 }
 /* line 83, bower_components\bootstrap\less\type.less */
 mark,
@@ -1779,15 +1779,15 @@ a.bg-danger:focus {
 }
 /* line 147, bower_components\bootstrap\less\type.less */
 .page-header {
-  padding-bottom: 9px;
-  margin: 40px 0 20px;
+  padding-bottom: 7.5px;
+  margin: 34px 0 17px;
   border-bottom: 1px solid #eeeeee;
 }
 /* line 158, bower_components\bootstrap\less\type.less */
 ul,
 ol {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 8.5px;
 }
 /* line 162, bower_components\bootstrap\less\type.less */
 ul ul,
@@ -1816,7 +1816,7 @@ ol ol {
 /* line 189, bower_components\bootstrap\less\type.less */
 dl {
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 17px;
 }
 /* line 193, bower_components\bootstrap\less\type.less */
 dt,
@@ -1860,9 +1860,9 @@ abbr[data-original-title] {
 }
 /* line 245, bower_components\bootstrap\less\type.less */
 blockquote {
-  padding: 10px 20px;
-  margin: 0 0 20px;
-  font-size: 17.5px;
+  padding: 8.5px 17px;
+  margin: 0 0 17px;
+  font-size: 15px;
   border-left: 5px solid #eeeeee;
 }
 /* line 254, bower_components\bootstrap\less\type.less */
@@ -1915,7 +1915,7 @@ blockquote.pull-right .small:after {
 }
 /* line 298, bower_components\bootstrap\less\type.less */
 address {
-  margin-bottom: 20px;
+  margin-bottom: 17px;
   font-style: normal;
   line-height: 1.42857143;
 }
@@ -1953,9 +1953,9 @@ kbd kbd {
 /* line 41, bower_components\bootstrap\less\code.less */
 pre {
   display: block;
-  padding: 9.5px;
-  margin: 0 0 10px;
-  font-size: 13px;
+  padding: 8px;
+  margin: 0 0 8.5px;
+  font-size: 11px;
   line-height: 1.42857143;
   word-break: break-all;
   word-wrap: break-word;
@@ -2879,7 +2879,7 @@ th {
 .table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 17px;
 }
 /* line 31, bower_components\bootstrap\less\tables.less */
 .table > thead > tr > th,
@@ -3087,7 +3087,7 @@ table th[class*="col-"] {
   /* line 175, bower_components\bootstrap\less\tables.less */
   .table-responsive {
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 12.75px;
     overflow-y: hidden;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     border: 1px solid #ddd;
@@ -3147,8 +3147,8 @@ legend {
   display: block;
   width: 100%;
   padding: 0;
-  margin-bottom: 20px;
-  font-size: 21px;
+  margin-bottom: 17px;
+  font-size: 18px;
   line-height: inherit;
   color: #333333;
   border: 0;
@@ -3197,7 +3197,7 @@ input[type="checkbox"]:focus {
 output {
   display: block;
   padding-top: 7px;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.42857143;
   color: #555555;
 }
@@ -3205,9 +3205,9 @@ output {
 .form-control {
   display: block;
   width: 100%;
-  height: 34px;
+  height: 31px;
   padding: 6px 12px;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.42857143;
   color: #555555;
   background-color: #fff;
@@ -3267,7 +3267,7 @@ input[type="search"] {
   input[type="time"].form-control,
   input[type="datetime-local"].form-control,
   input[type="month"].form-control {
-    line-height: 34px;
+    line-height: 31px;
   }
   /* line 195, bower_components\bootstrap\less\forms.less */
   input[type="date"].input-sm,
@@ -3278,7 +3278,7 @@ input[type="search"] {
   .input-group-sm input[type="time"],
   .input-group-sm input[type="datetime-local"],
   .input-group-sm input[type="month"] {
-    line-height: 30px;
+    line-height: 28px;
   }
   /* line 200, bower_components\bootstrap\less\forms.less */
   input[type="date"].input-lg,
@@ -3289,7 +3289,7 @@ input[type="search"] {
   .input-group-lg input[type="time"],
   .input-group-lg input[type="datetime-local"],
   .input-group-lg input[type="month"] {
-    line-height: 46px;
+    line-height: 42px;
   }
 }
 /* line 213, bower_components\bootstrap\less\forms.less */
@@ -3307,7 +3307,7 @@ input[type="search"] {
 /* line 229, bower_components\bootstrap\less\forms.less */
 .radio label,
 .checkbox label {
-  min-height: 20px;
+  min-height: 17px;
   padding-left: 20px;
   margin-bottom: 0;
   font-weight: normal;
@@ -3372,7 +3372,7 @@ fieldset[disabled] .checkbox label {
   padding-top: 7px;
   padding-bottom: 7px;
   margin-bottom: 0;
-  min-height: 34px;
+  min-height: 29px;
 }
 /* line 313, bower_components\bootstrap\less\forms.less */
 .form-control-static.input-lg,
@@ -3382,16 +3382,16 @@ fieldset[disabled] .checkbox label {
 }
 /* line 329, bower_components\bootstrap\less\forms.less */
 .input-sm {
-  height: 30px;
+  height: 28px;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.5;
   border-radius: 3px;
 }
 /* line 76, bower_components\bootstrap\less\mixins\forms.less */
 select.input-sm {
-  height: 30px;
-  line-height: 30px;
+  height: 28px;
+  line-height: 28px;
 }
 /* line 81, bower_components\bootstrap\less\mixins\forms.less */
 textarea.input-sm,
@@ -3400,16 +3400,16 @@ select[multiple].input-sm {
 }
 /* line 333, bower_components\bootstrap\less\forms.less */
 .form-group-sm .form-control {
-  height: 30px;
+  height: 28px;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.5;
   border-radius: 3px;
 }
 /* line 340, bower_components\bootstrap\less\forms.less */
 .form-group-sm select.form-control {
-  height: 30px;
-  line-height: 30px;
+  height: 28px;
+  line-height: 28px;
 }
 /* line 344, bower_components\bootstrap\less\forms.less */
 .form-group-sm textarea.form-control,
@@ -3418,24 +3418,24 @@ select[multiple].input-sm {
 }
 /* line 348, bower_components\bootstrap\less\forms.less */
 .form-group-sm .form-control-static {
-  height: 30px;
-  min-height: 32px;
+  height: 28px;
+  min-height: 28px;
   padding: 6px 10px;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.5;
 }
 /* line 357, bower_components\bootstrap\less\forms.less */
 .input-lg {
-  height: 46px;
+  height: 42px;
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.3333333;
   border-radius: 6px;
 }
 /* line 76, bower_components\bootstrap\less\mixins\forms.less */
 select.input-lg {
-  height: 46px;
-  line-height: 46px;
+  height: 42px;
+  line-height: 42px;
 }
 /* line 81, bower_components\bootstrap\less\mixins\forms.less */
 textarea.input-lg,
@@ -3444,16 +3444,16 @@ select[multiple].input-lg {
 }
 /* line 361, bower_components\bootstrap\less\forms.less */
 .form-group-lg .form-control {
-  height: 46px;
+  height: 42px;
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.3333333;
   border-radius: 6px;
 }
 /* line 368, bower_components\bootstrap\less\forms.less */
 .form-group-lg select.form-control {
-  height: 46px;
-  line-height: 46px;
+  height: 42px;
+  line-height: 42px;
 }
 /* line 372, bower_components\bootstrap\less\forms.less */
 .form-group-lg textarea.form-control,
@@ -3462,10 +3462,10 @@ select[multiple].input-lg {
 }
 /* line 376, bower_components\bootstrap\less\forms.less */
 .form-group-lg .form-control-static {
-  height: 46px;
-  min-height: 38px;
+  height: 42px;
+  min-height: 32px;
   padding: 11px 16px;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.3333333;
 }
 /* line 390, bower_components\bootstrap\less\forms.less */
@@ -3474,7 +3474,7 @@ select[multiple].input-lg {
 }
 /* line 395, bower_components\bootstrap\less\forms.less */
 .has-feedback .form-control {
-  padding-right: 42.5px;
+  padding-right: 38.75px;
 }
 /* line 400, bower_components\bootstrap\less\forms.less */
 .form-control-feedback {
@@ -3483,9 +3483,9 @@ select[multiple].input-lg {
   right: 0;
   z-index: 2;
   display: block;
-  width: 34px;
-  height: 34px;
-  line-height: 34px;
+  width: 31px;
+  height: 31px;
+  line-height: 31px;
   text-align: center;
   pointer-events: none;
 }
@@ -3493,17 +3493,17 @@ select[multiple].input-lg {
 .input-lg + .form-control-feedback,
 .input-group-lg + .form-control-feedback,
 .form-group-lg .form-control + .form-control-feedback {
-  width: 46px;
-  height: 46px;
-  line-height: 46px;
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
 }
 /* line 419, bower_components\bootstrap\less\forms.less */
 .input-sm + .form-control-feedback,
 .input-group-sm + .form-control-feedback,
 .form-group-sm .form-control + .form-control-feedback {
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
 }
 /* line 8, bower_components\bootstrap\less\mixins\forms.less */
 .has-success .help-block,
@@ -3606,7 +3606,7 @@ select[multiple].input-lg {
 }
 /* line 441, bower_components\bootstrap\less\forms.less */
 .has-feedback label ~ .form-control-feedback {
-  top: 25px;
+  top: 22px;
 }
 /* line 444, bower_components\bootstrap\less\forms.less */
 .has-feedback label.sr-only ~ .form-control-feedback {
@@ -3692,7 +3692,7 @@ select[multiple].input-lg {
 /* line 565, bower_components\bootstrap\less\forms.less */
 .form-horizontal .radio,
 .form-horizontal .checkbox {
-  min-height: 27px;
+  min-height: 24px;
 }
 /* line 571, bower_components\bootstrap\less\forms.less */
 .form-horizontal .form-group {
@@ -3715,14 +3715,14 @@ select[multiple].input-lg {
   /* line 599, bower_components\bootstrap\less\forms.less */
   .form-horizontal .form-group-lg .control-label {
     padding-top: 11px;
-    font-size: 18px;
+    font-size: 15px;
   }
 }
 @media (min-width: 768px) {
   /* line 607, bower_components\bootstrap\less\forms.less */
   .form-horizontal .form-group-sm .control-label {
     padding-top: 6px;
-    font-size: 12px;
+    font-size: 11px;
   }
 }
 /* line 9, bower_components\bootstrap\less\buttons.less */
@@ -3739,7 +3739,7 @@ select[multiple].input-lg {
   border: 1px solid transparent;
   white-space: nowrap;
   padding: 6px 12px;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.42857143;
   border-radius: 4px;
   -webkit-user-select: none;
@@ -4216,7 +4216,7 @@ fieldset[disabled] .btn-link:focus {
 .btn-lg,
 .btn-group-lg > .btn {
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.3333333;
   border-radius: 6px;
 }
@@ -4224,7 +4224,7 @@ fieldset[disabled] .btn-link:focus {
 .btn-sm,
 .btn-group-sm > .btn {
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.5;
   border-radius: 3px;
 }
@@ -4232,7 +4232,7 @@ fieldset[disabled] .btn-link:focus {
 .btn-xs,
 .btn-group-xs > .btn {
   padding: 1px 5px;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.5;
   border-radius: 3px;
 }
@@ -4318,7 +4318,7 @@ tbody.collapse.in {
   padding: 5px 0;
   margin: 2px 0 0;
   list-style: none;
-  font-size: 14px;
+  font-size: 12px;
   text-align: left;
   background-color: #fff;
   border: 1px solid #ccc;
@@ -4335,7 +4335,7 @@ tbody.collapse.in {
 /* line 60, bower_components\bootstrap\less\dropdowns.less */
 .dropdown-menu .divider {
   height: 1px;
-  margin: 9px 0;
+  margin: 7.5px 0;
   overflow: hidden;
   background-color: #e5e5e5;
 }
@@ -4402,7 +4402,7 @@ tbody.collapse.in {
 .dropdown-header {
   display: block;
   padding: 3px 20px;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.42857143;
   color: #777777;
   white-space: nowrap;
@@ -4682,9 +4682,9 @@ tbody.collapse.in {
 .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn {
-  height: 46px;
+  height: 42px;
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.3333333;
   border-radius: 6px;
 }
@@ -4692,8 +4692,8 @@ tbody.collapse.in {
 select.input-group-lg > .form-control,
 select.input-group-lg > .input-group-addon,
 select.input-group-lg > .input-group-btn > .btn {
-  height: 46px;
-  line-height: 46px;
+  height: 42px;
+  line-height: 42px;
 }
 /* line 81, bower_components\bootstrap\less\mixins\forms.less */
 textarea.input-group-lg > .form-control,
@@ -4708,9 +4708,9 @@ select[multiple].input-group-lg > .input-group-btn > .btn {
 .input-group-sm > .form-control,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn {
-  height: 30px;
+  height: 28px;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.5;
   border-radius: 3px;
 }
@@ -4718,8 +4718,8 @@ select[multiple].input-group-lg > .input-group-btn > .btn {
 select.input-group-sm > .form-control,
 select.input-group-sm > .input-group-addon,
 select.input-group-sm > .input-group-btn > .btn {
-  height: 30px;
-  line-height: 30px;
+  height: 28px;
+  line-height: 28px;
 }
 /* line 81, bower_components\bootstrap\less\mixins\forms.less */
 textarea.input-group-sm > .form-control,
@@ -4752,7 +4752,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 /* line 77, bower_components\bootstrap\less\input-groups.less */
 .input-group-addon {
   padding: 6px 12px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: normal;
   line-height: 1;
   color: #555555;
@@ -4764,13 +4764,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 /* line 89, bower_components\bootstrap\less\input-groups.less */
 .input-group-addon.input-sm {
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 11px;
   border-radius: 3px;
 }
 /* line 94, bower_components\bootstrap\less\input-groups.less */
 .input-group-addon.input-lg {
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 15px;
   border-radius: 6px;
 }
 /* line 101, bower_components\bootstrap\less\input-groups.less */
@@ -4884,7 +4884,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 /* line 59, bower_components\bootstrap\less\navs.less */
 .nav .nav-divider {
   height: 1px;
-  margin: 9px 0;
+  margin: 7.5px 0;
   overflow: hidden;
   background-color: #e5e5e5;
 }
@@ -5079,7 +5079,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar {
   position: relative;
   min-height: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 17px;
   border: 1px solid transparent;
 }
 @media (min-width: 768px) {
@@ -5203,9 +5203,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 /* line 163, bower_components\bootstrap\less\navbar.less */
 .navbar-brand {
   float: left;
-  padding: 15px 15px;
-  font-size: 18px;
-  line-height: 20px;
+  padding: 16.5px 15px;
+  font-size: 15px;
+  line-height: 17px;
   height: 50px;
 }
 /* line 170, bower_components\bootstrap\less\navbar.less */
@@ -5260,13 +5260,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 /* line 232, bower_components\bootstrap\less\navbar.less */
 .navbar-nav {
-  margin: 7.5px -15px;
+  margin: 8.25px -15px;
 }
 /* line 235, bower_components\bootstrap\less\navbar.less */
 .navbar-nav > li > a {
   padding-top: 10px;
   padding-bottom: 10px;
-  line-height: 20px;
+  line-height: 17px;
 }
 @media (max-width: 767px) {
   /* line 243, bower_components\bootstrap\less\navbar.less */
@@ -5286,7 +5286,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   /* line 255, bower_components\bootstrap\less\navbar.less */
   .navbar-nav .open .dropdown-menu > li > a {
-    line-height: 20px;
+    line-height: 17px;
   }
   /* line 257, bower_components\bootstrap\less\navbar.less */
   .navbar-nav .open .dropdown-menu > li > a:hover,
@@ -5306,8 +5306,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   /* line 272, bower_components\bootstrap\less\navbar.less */
   .navbar-nav > li > a {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 16.5px;
+    padding-bottom: 16.5px;
   }
 }
 /* line 286, bower_components\bootstrap\less\navbar.less */
@@ -5318,8 +5318,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 9.5px;
+  margin-bottom: 9.5px;
 }
 @media (min-width: 768px) {
   /* line 479, bower_components\bootstrap\less\forms.less */
@@ -5420,13 +5420,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 /* line 343, bower_components\bootstrap\less\navbar.less */
 .navbar-btn {
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 9.5px;
+  margin-bottom: 9.5px;
 }
 /* line 346, bower_components\bootstrap\less\navbar.less */
 .navbar-btn.btn-sm {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 11px;
+  margin-bottom: 11px;
 }
 /* line 349, bower_components\bootstrap\less\navbar.less */
 .navbar-btn.btn-xs {
@@ -5435,8 +5435,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 /* line 359, bower_components\bootstrap\less\navbar.less */
 .navbar-text {
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 16.5px;
+  margin-bottom: 16.5px;
 }
 @media (min-width: 768px) {
   /* line 362, bower_components\bootstrap\less\navbar.less */
@@ -5710,7 +5710,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 /* line 6, bower_components\bootstrap\less\breadcrumbs.less */
 .breadcrumb {
   padding: 8px 15px;
-  margin-bottom: 20px;
+  margin-bottom: 17px;
   list-style: none;
   background-color: #f5f5f5;
   border-radius: 4px;
@@ -5733,7 +5733,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination {
   display: inline-block;
   padding-left: 0;
-  margin: 20px 0;
+  margin: 17px 0;
   border-radius: 4px;
 }
 /* line 10, bower_components\bootstrap\less\pagination.less */
@@ -5805,7 +5805,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination-lg > li > a,
 .pagination-lg > li > span {
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.3333333;
 }
 /* line 12, bower_components\bootstrap\less\mixins\pagination.less */
@@ -5824,7 +5824,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination-sm > li > a,
 .pagination-sm > li > span {
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.5;
 }
 /* line 12, bower_components\bootstrap\less\mixins\pagination.less */
@@ -5842,7 +5842,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 /* line 6, bower_components\bootstrap\less\pager.less */
 .pager {
   padding-left: 0;
-  margin: 20px 0;
+  margin: 17px 0;
   list-style: none;
   text-align: center;
 }
@@ -5972,7 +5972,7 @@ a.label:focus {
   display: inline-block;
   min-width: 10px;
   padding: 3px 7px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: bold;
   color: #fff;
   line-height: 1;
@@ -6038,7 +6038,7 @@ a.badge:focus {
 /* line 18, bower_components\bootstrap\less\jumbotron.less */
 .jumbotron p {
   margin-bottom: 15px;
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 200;
 }
 /* line 24, bower_components\bootstrap\less\jumbotron.less */
@@ -6071,14 +6071,14 @@ a.badge:focus {
   /* line 49, bower_components\bootstrap\less\jumbotron.less */
   .jumbotron h1,
   .jumbotron .h1 {
-    font-size: 63px;
+    font-size: 54px;
   }
 }
 /* line 7, bower_components\bootstrap\less\thumbnails.less */
 .thumbnail {
   display: block;
   padding: 4px;
-  margin-bottom: 20px;
+  margin-bottom: 17px;
   line-height: 1.42857143;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -6105,7 +6105,7 @@ a.thumbnail.active {
 /* line 9, bower_components\bootstrap\less\alerts.less */
 .alert {
   padding: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 17px;
   border: 1px solid transparent;
   border-radius: 4px;
 }
@@ -6209,8 +6209,8 @@ a.thumbnail.active {
 /* line 26, bower_components\bootstrap\less\progress-bars.less */
 .progress {
   overflow: hidden;
-  height: 20px;
-  margin-bottom: 20px;
+  height: 17px;
+  margin-bottom: 17px;
   background-color: #f5f5f5;
   border-radius: 4px;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -6220,8 +6220,8 @@ a.thumbnail.active {
   float: left;
   width: 0%;
   height: 100%;
-  font-size: 12px;
-  line-height: 20px;
+  font-size: 11px;
+  line-height: 17px;
   color: #fff;
   text-align: center;
   background-color: #337ab7;
@@ -6576,7 +6576,7 @@ button.list-group-item-danger.active:focus {
 }
 /* line 7, bower_components\bootstrap\less\panels.less */
 .panel {
-  margin-bottom: 20px;
+  margin-bottom: 17px;
   background-color: #fff;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -6601,7 +6601,7 @@ button.list-group-item-danger.active:focus {
 .panel-title {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 16px;
+  font-size: 14px;
   color: inherit;
 }
 /* line 39, bower_components\bootstrap\less\panels.less */
@@ -6819,7 +6819,7 @@ button.list-group-item-danger.active:focus {
 }
 /* line 222, bower_components\bootstrap\less\panels.less */
 .panel-group {
-  margin-bottom: 20px;
+  margin-bottom: 17px;
 }
 /* line 226, bower_components\bootstrap\less\panels.less */
 .panel-group .panel {
@@ -7043,7 +7043,7 @@ button.list-group-item-danger.active:focus {
 /* line 6, bower_components\bootstrap\less\close.less */
 .close {
   float: right;
-  font-size: 21px;
+  font-size: 18px;
   font-weight: bold;
   line-height: 1;
   color: #000;
@@ -7223,7 +7223,7 @@ button.close {
   word-break: normal;
   word-spacing: normal;
   word-wrap: normal;
-  font-size: 12px;
+  font-size: 11px;
   opacity: 0;
   filter: alpha(opacity=0);
 }
@@ -7357,7 +7357,7 @@ button.close {
   word-break: normal;
   word-spacing: normal;
   word-wrap: normal;
-  font-size: 14px;
+  font-size: 12px;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ccc;
@@ -7385,7 +7385,7 @@ button.close {
 .popover-title {
   margin: 0;
   padding: 8px 14px;
-  font-size: 14px;
+  font-size: 12px;
   background-color: #f7f7f7;
   border-bottom: 1px solid #ebebeb;
   border-radius: 5px 5px 0 0;
