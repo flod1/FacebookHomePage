@@ -1,6 +1,8 @@
 # Composer files
 composer.phar
 vendor/
+node_modules/
+bower_components/
 
 # Local configs
 config/autoload/*.local.php

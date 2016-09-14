@@ -1,0 +1,200 @@
+/* Mobile Breakpoints */
+.xs(@rules) {
+  @media only screen and (max-width: @screen-xs-max) { @rules();
+  }
+}
+
+/* Tablet Breakpoints */
+.sm(@rules) {
+  @media only screen and (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { @rules();
+  }
+}
+
+/* Medium Desktop Breakpoints */
+.md(@rules) {
+  @media only screen and (min-width: @screen-md-min) and (max-width: @screen-md-max) { @rules();
+  }
+}
+
+/* Large Desktop Breakpoints */
+.lg(@rules) {
+  @media only screen and (min-width: @screen-lg-min) { @rules();
+  }
+}
+
+/* Retina Mixins */
+.retina(@rules) {
+  @media only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+    @rules();
+  }
+}
+
+/* font-smoothing */
+.fontsmoothing-subpixel {
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fontsmoothing-antialiased {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* centering class; parent must be position relative */
+.centerwithrelativeparent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.center-horizontal-withrelativeparent {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+}
+
+.center-horizontal {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  -ms-transform: translate(-50%, 0px);
+  -webkit-transform: translate(-50%, 0px);
+  -moz-transform: translate(-50%, 0px);
+  -o-transform: translate(-50%, 0px);
+}
+
+.center-vertical {
+  position: relative;
+  top: 50%;
+  transform: translate(0px, -50%);
+  -ms-transform: translate(0px, -50%);
+  -webkit-transform: translate(0px, -50%);
+  -moz-transform: translate(0px, -50%);
+  -o-transform: translate(0px, -50%);
+}
+
+.grey-filter {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+  filter: gray; /* IE6-9 */
+  -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+}
+
+.padding-by-aspect-ratio (@width: 16, @height: 9) {
+  /*
+   sets bottom padding by aspect ratio
+
+   example for image dimensions (4/3 and 16/9 is fine as well):
+
+   Image size : 885 x 500 px
+   Ratio      : 885 / 500 = 1.777108434
+   Padding    : 100 % / 1.777108434 = 56,271186432%
+ */
+
+  padding-bottom: (100% / (@width / @height));
+}
+
+//Box Shadow
+.box-shadow (@string) {
+  -webkit-box-shadow: @string;
+  -moz-box-shadow: @string;
+  box-shadow: @string;
+}
+
+//Spinner
+.spinner(@size: 64px) {
+  background: @color-white url("@{image-path}/common/spinner_on_transparent_128.gif") center no-repeat;
+  background-size: @size @size;
+}
+
+// hyphenation
+
+.hyphenate {
+  -ms-word-break: break-all;
+  word-break: break-word;
+
+  /* hyphenation does not work in Chrome; if necessary use polyfill (but it is a very large JS) */
+
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+.column-count(@column) {
+  -moz-column-count: @column;
+  -webkit-column-count: @column;
+  column-count: @column;
+}
+
+.column-width(@width) {
+  -moz-column-width: @width;
+  -webkit-column-width: @width;
+  column-width: @width;
+}
+
+@gutter-width: @grid-gutter-width;
+@gutter-width-md: @grid-gutter-width - 10;
+@gutter-width-sm: @grid-gutter-width - 10;
+@gutter-width-xs: @grid-gutter-width - 10;
+
+.row-margin() {
+  margin-left: (@gutter-width / -2);
+  margin-right: (@gutter-width / -2);
+  .md({ margin-left: (@gutter-width-md / -2); margin-right: (@gutter-width-md / -2); });
+  .sm({ margin-left: (@gutter-width-sm / -2); margin-right: (@gutter-width-sm / -2); });
+  .xs({ margin-left: (@gutter-width-xs / -2); margin-right: (@gutter-width-xs / -2); });
+}
+
+.col-padding-left() {
+  padding-left: (@gutter-width / 2);
+  .md({ padding-left: (@gutter-width-md / 2); });
+  .sm({ padding-left: (@gutter-width-sm / 2); });
+  .xs({ padding-left: (@gutter-width-xs / 2); });
+}
+
+.col-padding-right() {
+  padding-right: (@gutter-width / 2);
+  .md({ padding-right: (@gutter-width-md / 2); });
+  .sm({ padding-right: (@gutter-width-sm / 2); });
+  .xs({ padding-right: (@gutter-width-xs / 2); });
+}
+
+.col-padding() {
+  .col-padding-left();
+  .col-padding-right();
+}
+
+.transition(@transition) {
+
+  -webkit-transition: @transition;
+  -moz-transition: @transition;
+  -ms-transition: @transition;
+  -o-transition: @transition;
+  transition: @transition;
+}
+
+// Animations
+
+.keyframes(@name; @arguments) {
+  @-moz-keyframes @name { @arguments();
+  }
+  @-webkit-keyframes @name { @arguments();
+  }
+  @keyframes @name { @arguments();
+  }
+}
+
+.animation(@arguments) {
+  -webkit-animation: @arguments;
+  -moz-animation: @arguments;
+  animation: @arguments;
+}

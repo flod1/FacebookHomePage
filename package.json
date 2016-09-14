@@ -1,0 +1,38 @@
+{
+  "name": "facebookhomepage",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "",
+  "authors": [
+    {
+      "name": "Florian Degenhardt",
+      "email": "florian.degenhardt@gmx.de",
+      "homepage": "http://www.floit.de",
+      "role": "Lead Developer"
+    }
+  ],
+  "dependencies": {
+    "bower": "^1.4.1",
+    "grunt": "~0.4.5",
+    "grunt-legacy-util": "^0.2.0",
+    "grunt-contrib-concat": "~0.5.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-less": "1.0.0",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-pngquant-preserve": "^0.1.1",
+    "less": "^2.5.1",
+    "pngquant-bin": "^2.0.3"
+  },
+  "devDependencies": {
+    "autoprefixer-core": "^5.2.1",
+    "grunt-image": "^1.0.7",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-postcss": "^0.5.5"
+  },
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node_modules/.bin/bower install"
+  },
+  "license": "ISC"
+}
