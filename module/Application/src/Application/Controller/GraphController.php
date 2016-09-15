@@ -92,12 +92,25 @@ class GraphController extends AbstractActionController
                 $graphEdge['key'] = "posts";
                 $graphEdge['count'] = $pageWidget->fetchAllPosts()->count();
                 $graphEdges[] = $graphEdge;
+
+                $graphEdge = array();
+                $graphEdge['key'] = "global_brand_children";
+                $graphEdge['count'] = $this->getFacebookBaseService()->fetchGlobalBrandChildren($id)->count();
+                $graphEdges[] = $graphEdge;
+
+                $graphEdge = array();
+                $graphEdge['key'] = "videos";
+                $graphEdge['count'] = $this->getFacebookBaseService()->fetchVideos($id)->count();
+                $graphEdges[] = $graphEdge;
                 break;
             case "post":
                 $graphNode = $this->getFacebookBaseService()->fetchPost($id, "*");
                 break;
             case "photo":
                 $graphNode = $this->getFacebookBaseService()->fetchPhoto($id, "*");
+                break;
+            case "video":
+                $graphNode = $this->getFacebookBaseService()->fetchVideo($id, "*");
                 break;
             case "page_milestone":
                 $graphNode = $this->getFacebookBaseService()->fetchMilestone($id, "*");
@@ -161,6 +174,9 @@ class GraphController extends AbstractActionController
                 break;
             case "milestones":
                 $graphEdge = $this->getFacebookBaseService()->fetchMilestones($id, "*");
+                break;
+            case "videos":
+                $graphEdge = $this->getFacebookBaseService()->fetchVideos($id, "*");
                 break;
             //case "photos":$subclass = "GraphPicture";break;
             default :
