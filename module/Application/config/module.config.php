@@ -105,6 +105,9 @@ return array(
             //Navigtion
             'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
         ),
+        //'aliases' => array(
+        //    'logger' => 'jhu.zdt_logger',
+        //),
     ),
     'translator' => array(
         'locale' => 'en_US',

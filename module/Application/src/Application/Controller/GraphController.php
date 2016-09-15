@@ -55,6 +55,7 @@ class GraphController extends AbstractActionController
 
 
         $id = $this->params()->fromRoute("id");
+        $fields = $this->params()->fromQuery("fields","*");
         $parameters = array("metadata" => 1);
         $response = $this->getFacebookBaseService()->fetchGraphNode($id, $parameters);
         $graphNode = $response->getGraphNode();
@@ -70,7 +71,7 @@ class GraphController extends AbstractActionController
 
         switch ($nodetype) {
             case "page":
-                $graphNode = $this->getFacebookBaseService()->fetchPage($id, "*");
+                $graphNode = $this->getFacebookBaseService()->fetchPage($id, $fields);
                 $pageWidget->setPageID($id);
 
                 $graphEdge = array();
@@ -104,7 +105,7 @@ class GraphController extends AbstractActionController
                 $graphEdges[] = $graphEdge;
                 break;
             case "post":
-                $graphNode = $this->getFacebookBaseService()->fetchPost($id, "*");
+                $graphNode = $this->getFacebookBaseService()->fetchPost($id, $fields);
 
                 $graphEdge = array();
                 $graphEdge['key'] = "likes";
@@ -113,10 +114,10 @@ class GraphController extends AbstractActionController
                 $graphNodeTitle = $graphNode->getField("id");
                 break;
             case "photo":
-                $graphNode = $this->getFacebookBaseService()->fetchPhoto($id, "*");
+                $graphNode = $this->getFacebookBaseService()->fetchPhoto($id, $fields);
                 break;
             case "video":
-                $graphNode = $this->getFacebookBaseService()->fetchVideo($id, "*");
+                $graphNode = $this->getFacebookBaseService()->fetchVideo($id, $fields);
 
                 $graphEdge = array();
                 $graphEdge['key'] = "likes";
@@ -132,19 +133,64 @@ class GraphController extends AbstractActionController
 
                 break;
             case "page_milestone":
-                $graphNode = $this->getFacebookBaseService()->fetchMilestone($id, "*");
+                $graphNode = $this->getFacebookBaseService()->fetchMilestone($id, $fields);
                 $graphNodeTitle = $graphNode->getField("title");
                 break;
             case "album":
-                $graphNode = $this->getFacebookBaseService()->fetchAlbum($id, "*");
+                $graphNode = $this->getFacebookBaseService()->fetchAlbum($id, $fields);
 
                 $graphEdge = array();
                 $graphEdge['key'] = "photos";
-                $graphEdge['count'] = $this->getFacebookBaseService()->fetchPhotosByAlbum($id,"*")->count();
+                $graphEdge['count'] = $this->getFacebookBaseService()->fetchPhotosByAlbum($id,$fields)->count();
                 $graphEdges[] = $graphEdge;
                 break;
             case "event":
-                $graphNode = $this->getFacebookBaseService()->fetchEvent($id, "*");
+                $graphNode = $this->getFacebookBaseService()->fetchEvent($id, $fields);
+
+                $graphEdge = array();
+                $graphEdge['key'] = "attending";
+                $graphEdge['count'] = $graphNode->getAttendingCount();
+                $graphEdges[] = $graphEdge;
+
+                $graphEdge = array();
+                $graphEdge['key'] = "declined";
+                $graphEdge['count'] = $graphNode->getDeclinedCount();
+                $graphEdges[] = $graphEdge;
+
+                $graphEdge = array();
+                $graphEdge['key'] = "interested";
+                $graphEdge['count'] = $this->getFacebookBaseService()->fetchInterestedsByEvent($id)->count();
+                $graphEdges[] = $graphEdge;
+
+                $graphEdge = array();
+                $graphEdge['key'] = "maybe";
+                $graphEdge['count'] = $graphNode->getMaybeCount();
+                $graphEdges[] = $graphEdge;
+
+                $graphEdge = array();
+                $graphEdge['key'] = "noreply";
+                $graphEdge['count'] = $graphNode->getNoreplyCount();
+                $graphEdges[] = $graphEdge;
+
+                $graphEdge = array();
+                $graphEdge['key'] = "comments";
+                $graphEdge['count'] = $this->getFacebookBaseService()->fetchComments($id)->count();
+                $graphEdges[] = $graphEdge;
+
+                $graphEdge = array();
+                $graphEdge['key'] = "photos";
+                $graphEdge['count'] = $this->getFacebookBaseService()->fetchPhotos($id)->count();
+                $graphEdges[] = $graphEdge;
+
+                break;
+            case "group":
+                $graphNode = $this->getFacebookBaseService()->fetchGroup($id, $fields);
+
+                $graphEdge = array();
+                $graphEdge['key'] = "albums";
+                $graphEdge['count'] = $this->getFacebookBaseService()->fetchAlbums($id)->count();
+                $graphEdges[] = $graphEdge;
+
                 break;
             default : var_dump($nodetype);
 
@@ -176,30 +222,42 @@ class GraphController extends AbstractActionController
         $graphEdgeTitle = $graphNode->getField("id");
         $nodetype = $metadata->getField("type");
 
+        switch ($nodetype) {
+            case "page":
+            case "album":
+            case "event":
+                $graphEdgeTitle = $graphNode->getField("name");
+                break;
+        }
+
         $edge = $this->params()->fromRoute("edge");
+        $fields = $this->params()->fromQuery("fields","*");
 
         $subclass = null;
         switch ($edge) {
             case "events":
-                $graphEdge = $this->getFacebookBaseService()->fetchEvents($id, "*");
+                $graphEdge = $this->getFacebookBaseService()->fetchEvents($id, $fields);
                 break;
             case "albums":
-                $graphEdge = $this->getFacebookBaseService()->fetchAlbums($id, "*");
+                $graphEdge = $this->getFacebookBaseService()->fetchAlbums($id, $fields);
                 break;
             case "photos":
-                $graphEdge = $this->getFacebookBaseService()->fetchPhotosByAlbum($id, "*");
+                $graphEdge = $this->getFacebookBaseService()->fetchPhotosByAlbum($id, $fields);
                 break;
             case "posts":
-                $graphEdge = $this->getFacebookBaseService()->fetchPosts($id, "*");
+                $graphEdge = $this->getFacebookBaseService()->fetchPosts($id, $fields);
                 break;
             case "milestones":
-                $graphEdge = $this->getFacebookBaseService()->fetchMilestones($id, "*");
+                $graphEdge = $this->getFacebookBaseService()->fetchMilestones($id, $fields);
                 break;
             case "videos":
-                $graphEdge = $this->getFacebookBaseService()->fetchVideos($id, "*");
+                $graphEdge = $this->getFacebookBaseService()->fetchVideos($id, $fields);
                 break;
             case "likes":
                 $graphEdge = $this->getFacebookBaseService()->fetchLikes($id);
+                break;
+            case "interested":
+                $graphEdge = $this->getFacebookBaseService()->fetchInterestedsByEvent($id);
                 break;
             //case "photos":$subclass = "GraphPicture";break;
             default :
