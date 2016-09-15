@@ -105,12 +105,31 @@ class GraphController extends AbstractActionController
                 break;
             case "post":
                 $graphNode = $this->getFacebookBaseService()->fetchPost($id, "*");
+
+                $graphEdge = array();
+                $graphEdge['key'] = "likes";
+                $graphEdge['count'] = $this->getFacebookBaseService()->fetchLikes($id)->count();
+                $graphEdges[] = $graphEdge;
+                $graphNodeTitle = $graphNode->getField("id");
                 break;
             case "photo":
                 $graphNode = $this->getFacebookBaseService()->fetchPhoto($id, "*");
                 break;
             case "video":
                 $graphNode = $this->getFacebookBaseService()->fetchVideo($id, "*");
+
+                $graphEdge = array();
+                $graphEdge['key'] = "likes";
+                $graphEdge['count'] = $this->getFacebookBaseService()->fetchLikesByVideo($id)->count();
+                $graphEdges[] = $graphEdge;
+
+                $graphEdge = array();
+                $graphEdge['key'] = "comments";
+                $graphEdge['count'] = $this->getFacebookBaseService()->fetchCommentsByVideo($id)->count();
+                $graphEdges[] = $graphEdge;
+
+                $graphNodeTitle = $graphNode->getField("id");
+
                 break;
             case "page_milestone":
                 $graphNode = $this->getFacebookBaseService()->fetchMilestone($id, "*");
@@ -154,6 +173,7 @@ class GraphController extends AbstractActionController
 
         /** @var $metadata \Facebook\GraphNodes\GraphNode */
         $metadata = $graphNode->getField("metadata");
+        $graphEdgeTitle = $graphNode->getField("id");
         $nodetype = $metadata->getField("type");
 
         $edge = $this->params()->fromRoute("edge");
@@ -178,6 +198,9 @@ class GraphController extends AbstractActionController
             case "videos":
                 $graphEdge = $this->getFacebookBaseService()->fetchVideos($id, "*");
                 break;
+            case "likes":
+                $graphEdge = $this->getFacebookBaseService()->fetchLikes($id);
+                break;
             //case "photos":$subclass = "GraphPicture";break;
             default :
                 $graphEdge = $this->getFacebookBaseService()->fetchGraphEdge($id, $edge, $subclass, $parameters);
@@ -186,7 +209,7 @@ class GraphController extends AbstractActionController
         $graphNodeType = ucfirst($nodetype);
         $graphEdgeType = ucfirst($edge);
 
-        return new ViewModel(array("graphNode" => $graphNode, "graphEdge" => $graphEdge, "graphNodeType" => $graphNodeType, "graphEdgeType" => $graphEdgeType));
+        return new ViewModel(array("graphNode" => $graphNode, "graphEdge" => $graphEdge, "graphNodeType" => $graphNodeType, "graphEdgeType" => $graphEdgeType,"graphEdgeTitle"=>$graphEdgeTitle));
 
     }
 
