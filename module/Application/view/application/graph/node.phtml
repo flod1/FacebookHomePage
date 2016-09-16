@@ -12,21 +12,30 @@ $item = $graphNode;
     </thead>
     <tbody>
     <?
-    /* @var $item Facebook\GraphNodes\GraphNode */
+    /* @var $item \FbBasic\GraphNodes\GraphInterface */
     $fieldnames = $item->getFieldNames();
+    $edges = $item->getObjectEdges();
+    echo '"'.implode('","',$fieldnames).'"';
     foreach ($fieldnames AS $fieldName) {
         $field = $item->getField($fieldName);
 
         ?>
         <tr>
-            <td><? echo $fieldName; ?></td>
+            <td><?
+                if(isset($edges[$fieldName])){
+                   ?><a href="<? echo $this->url("graphedge",array("id"=>$item->getField("id"),"edge"=>$fieldName));?>"><? echo $fieldName;?></a><?
+                }
+                else{
+                    echo $fieldName;
+                }
+                 ?></td>
             <td>
                 <? echo $this->graphfield($fieldName,$field); ?>&nbsp;
             </td>
         </tr>
         <?
     }
-
+    /*
     if(isset($graphEdges)){
         foreach ($graphEdges AS $edge) {
             ?>
@@ -39,6 +48,7 @@ $item = $graphNode;
             <?
         }
     }
+    */
 
     ?>
     </tbody>

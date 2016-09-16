@@ -9,6 +9,7 @@
             //var_dump($item->getFieldNames());
             /* @var $item Facebook\GraphNodes\GraphNode */
             $fieldnames = $item->getFieldNames();
+            echo '"'.implode('","',$fieldnames).'"';
             foreach ($fieldnames AS $fieldName) {
                 ?>
                 <td><? echo $fieldName; ?></td>

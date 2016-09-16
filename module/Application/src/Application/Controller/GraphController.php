@@ -73,27 +73,26 @@ class GraphController extends AbstractActionController
             case "page":
                 $graphNode = $this->getFacebookBaseService()->fetchPage($id, $fields);
                 $pageWidget->setPageID($id);
-
+/*
                 $graphEdge = array();
                 $graphEdge['key'] = "albums";
                 $graphEdge['count'] = $pageWidget->fetchAllAlbums()->count();
-                $graphEdges[] = $graphEdge;
+                //$graphEdges[] = $graphEdge;
 
                 $graphEdge = array();
                 $graphEdge['key'] = "events";
                 $graphEdge['count'] = $pageWidget->fetchAllEvents()->count();
-                $graphEdges[] = $graphEdge;
+                //$graphEdges[] = $graphEdge;
 
                 $graphEdge = array();
                 $graphEdge['key'] = "milestones";
                 $graphEdge['count'] = $pageWidget->fetchAllMilestones()->count();
-                $graphEdges[] = $graphEdge;
+                //$graphEdges[] = $graphEdge;
 
                 $graphEdge = array();
                 $graphEdge['key'] = "posts";
                 $graphEdge['count'] = $pageWidget->fetchAllPosts()->count();
                 $graphEdges[] = $graphEdge;
-
                 $graphEdge = array();
                 $graphEdge['key'] = "global_brand_children";
                 $graphEdge['count'] = $this->getFacebookBaseService()->fetchGlobalBrandChildren($id)->count();
@@ -103,6 +102,7 @@ class GraphController extends AbstractActionController
                 $graphEdge['key'] = "videos";
                 $graphEdge['count'] = $this->getFacebookBaseService()->fetchVideos($id)->count();
                 $graphEdges[] = $graphEdge;
+*/
                 break;
             case "post":
                 $graphNode = $this->getFacebookBaseService()->fetchPost($id, $fields);
@@ -137,12 +137,14 @@ class GraphController extends AbstractActionController
                 $graphNodeTitle = $graphNode->getField("title");
                 break;
             case "album":
-                $graphNode = $this->getFacebookBaseService()->fetchAlbum($id, $fields);
-
+                $graphNode = $this->getFacebookBaseService()->fetchAlbum($id, $fields,"photos");
+/*
                 $graphEdge = array();
                 $graphEdge['key'] = "photos";
                 $graphEdge['count'] = $this->getFacebookBaseService()->fetchPhotosByAlbum($id,$fields)->count();
-                $graphEdges[] = $graphEdge;
+                $graphEdge['edge'] = $this->getFacebookBaseService()->fetchPhotosByAlbum($id,$fields);
+                //$graphEdges[] = $graphEdge;
+*/
                 break;
             case "event":
                 $graphNode = $this->getFacebookBaseService()->fetchEvent($id, $fields);
@@ -186,11 +188,6 @@ class GraphController extends AbstractActionController
             case "group":
                 $graphNode = $this->getFacebookBaseService()->fetchGroup($id, $fields);
 
-                $graphEdge = array();
-                $graphEdge['key'] = "albums";
-                $graphEdge['count'] = $this->getFacebookBaseService()->fetchAlbums($id)->count();
-                $graphEdges[] = $graphEdge;
-
                 break;
             default : var_dump($nodetype);
 
@@ -199,7 +196,7 @@ class GraphController extends AbstractActionController
         $graphNodeType = $this->camelize($nodetype);
 
 
-        var_dump($this->params()->fromRoute());
+        //var_dump($this->params()->fromRoute());
         return new ViewModel(array("graphNode" => $graphNode, "graphEdges" => $graphEdges, "graphNodeType" => $graphNodeType,"graphNodeTitle"=>$graphNodeTitle));
 
     }
