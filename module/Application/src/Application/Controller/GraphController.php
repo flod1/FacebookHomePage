@@ -121,7 +121,7 @@ class GraphController extends AbstractActionController
                 break;
             case "video":
                 $graphNode = $this->getFacebookBaseService()->fetchVideo($id, $fields);
-
+/*
                 $graphEdge = array();
                 $graphEdge['key'] = "likes";
                 $graphEdge['count'] = $this->getFacebookBaseService()->fetchLikesByVideo($id)->count();
@@ -131,7 +131,7 @@ class GraphController extends AbstractActionController
                 $graphEdge['key'] = "comments";
                 $graphEdge['count'] = $this->getFacebookBaseService()->fetchCommentsByVideo($id)->count();
                 $graphEdges[] = $graphEdge;
-
+*/
                 $graphNodeTitle = $graphNode->getField("id");
 
                 break;
@@ -151,7 +151,7 @@ class GraphController extends AbstractActionController
                 break;
             case "event":
                 $graphNode = $this->getFacebookBaseService()->fetchEvent($id, $fields);
-
+/*
                 $graphEdge = array();
                 $graphEdge['key'] = "attending";
                 $graphEdge['count'] = $graphNode->getAttendingCount();
@@ -186,7 +186,7 @@ class GraphController extends AbstractActionController
                 $graphEdge['key'] = "photos";
                 $graphEdge['count'] = $this->getFacebookBaseService()->fetchPhotos($id)->count();
                 $graphEdges[] = $graphEdge;
-
+*/
                 break;
             case "group":
                 $graphNode = $this->getFacebookBaseService()->fetchGroup($id, $fields);
@@ -258,6 +258,9 @@ class GraphController extends AbstractActionController
                 break;
             case "likes":
                 $graphEdge = $this->getFacebookBaseService()->fetchLikes($id,$fields);
+                break;
+            case "attachments":
+                $graphEdge = $this->getFacebookBaseService()->fetchAttachments($id,$fields);
                 break;
             case "interested":
                 $graphEdge = $this->getFacebookBaseService()->fetchInterestedsByEvent($id);
