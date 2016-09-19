@@ -106,15 +106,18 @@ class GraphController extends AbstractActionController
                 break;
             case "post":
                 $graphNode = $this->getFacebookBaseService()->fetchPost($id, $fields);
-
-                $graphEdge = array();
-                $graphEdge['key'] = "likes";
-                $graphEdge['count'] = $this->getFacebookBaseService()->fetchLikes($id)->count();
-                $graphEdges[] = $graphEdge;
                 $graphNodeTitle = $graphNode->getField("id");
+                break;
+            case "user":
+                $graphNode = $this->getFacebookBaseService()->fetchUser($id, $fields);
                 break;
             case "photo":
                 $graphNode = $this->getFacebookBaseService()->fetchPhoto($id, $fields);
+                $graphNodeTitle = $graphNode->getField("id");
+                break;
+            case "comment":
+                $graphNode = $this->getFacebookBaseService()->fetchComment($id, $fields);
+                $graphNodeTitle = $graphNode->getField("id");
                 break;
             case "video":
                 $graphNode = $this->getFacebookBaseService()->fetchVideo($id, $fields);
@@ -137,7 +140,7 @@ class GraphController extends AbstractActionController
                 $graphNodeTitle = $graphNode->getField("title");
                 break;
             case "album":
-                $graphNode = $this->getFacebookBaseService()->fetchAlbum($id, $fields,"photos");
+                $graphNode = $this->getFacebookBaseService()->fetchAlbum($id, $fields);
 /*
                 $graphEdge = array();
                 $graphEdge['key'] = "photos";
@@ -238,6 +241,9 @@ class GraphController extends AbstractActionController
             case "albums":
                 $graphEdge = $this->getFacebookBaseService()->fetchAlbums($id, $fields);
                 break;
+            case "feed":
+                $graphEdge = $this->getFacebookBaseService()->fetchPosts($id, $fields);
+                break;
             case "photos":
                 $graphEdge = $this->getFacebookBaseService()->fetchPhotosByAlbum($id, $fields);
                 break;
@@ -251,7 +257,7 @@ class GraphController extends AbstractActionController
                 $graphEdge = $this->getFacebookBaseService()->fetchVideos($id, $fields);
                 break;
             case "likes":
-                $graphEdge = $this->getFacebookBaseService()->fetchLikes($id);
+                $graphEdge = $this->getFacebookBaseService()->fetchLikes($id,$fields);
                 break;
             case "interested":
                 $graphEdge = $this->getFacebookBaseService()->fetchInterestedsByEvent($id);
