@@ -39,7 +39,9 @@
             }
             ?>
             <td>
-                <a href="<? echo $this->url("graphnode", array("id" => $item->getField("id"))); ?>">More</a>
+                <? if($item->getField("id")):?>
+                    <a href="<? echo $this->url("graphnode", array("id" => $item->getField("id"))); ?>">More</a>
+                <?endif;?>
             </td>
         </tr>
 
