@@ -104,42 +104,6 @@ class GraphController extends AbstractActionController
                 break;
             case "event":
                 $graphNode = $this->getFacebookBaseService()->fetchEvent($id, $fields);
-                /*
-                                $graphEdge = array();
-                                $graphEdge['key'] = "attending";
-                                $graphEdge['count'] = $graphNode->getAttendingCount();
-                                $graphEdges[] = $graphEdge;
-
-                                $graphEdge = array();
-                                $graphEdge['key'] = "declined";
-                                $graphEdge['count'] = $graphNode->getDeclinedCount();
-                                $graphEdges[] = $graphEdge;
-
-                                $graphEdge = array();
-                                $graphEdge['key'] = "interested";
-                                $graphEdge['count'] = $this->getFacebookBaseService()->fetchInterestedsByEvent($id)->count();
-                                $graphEdges[] = $graphEdge;
-
-                                $graphEdge = array();
-                                $graphEdge['key'] = "maybe";
-                                $graphEdge['count'] = $graphNode->getMaybeCount();
-                                $graphEdges[] = $graphEdge;
-
-                                $graphEdge = array();
-                                $graphEdge['key'] = "noreply";
-                                $graphEdge['count'] = $graphNode->getNoreplyCount();
-                                $graphEdges[] = $graphEdge;
-
-                                $graphEdge = array();
-                                $graphEdge['key'] = "comments";
-                                $graphEdge['count'] = $this->getFacebookBaseService()->fetchComments($id)->count();
-                                $graphEdges[] = $graphEdge;
-
-                                $graphEdge = array();
-                                $graphEdge['key'] = "photos";
-                                $graphEdge['count'] = $this->getFacebookBaseService()->fetchPhotos($id)->count();
-                                $graphEdges[] = $graphEdge;
-                */
                 break;
             case "group":
                 $graphNode = $this->getFacebookBaseService()->fetchGroup($id, $fields);
