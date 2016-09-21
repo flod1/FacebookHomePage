@@ -30,7 +30,7 @@ class ExampleController extends AbstractActionController
 
         /**
          * @var $pageWidget \FbPage\View\Helper\PageWidget
-         * @var $graphWidget \FbBasic\View\Helper\GraphWidget
+         * @var $graphWidget \FbBasic\View\Widget\GraphWidget
          */
 
         $pageid = $this->params()->fromQuery('pageid');
@@ -71,7 +71,7 @@ class ExampleController extends AbstractActionController
         $example['title'] = "Albums";
         $example['describtion'] = 'Albums by a Page';
         $example['code'] = 'echo $pageWidget->fetchAllAlbums($fields=null,$limit=null)';
-        $example['sample'] = $pageWidget->fetchAllAlbums()->render();
+        $example['sample'] = $pageWidget->fetchAllAlbums("*")->render();
 
         $examples[] = $example;
 

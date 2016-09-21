@@ -44,8 +44,8 @@ class GraphController extends AbstractActionController
     public function nodeAction()
     {
 
-        $viewHelperManager = $this->getServiceLocator()->get('ViewHelperManager');
-        $pageWidget = $viewHelperManager->get('pageWidget');
+        //$viewHelperManager = $this->getServiceLocator()->get('ViewHelperManager');
+        //$pageWidget = $viewHelperManager->get('pageWidget');
         //$graphWidget = $viewHelperManager->get('graphWidget');
 
         /**
@@ -72,8 +72,6 @@ class GraphController extends AbstractActionController
         switch ($nodetype) {
             case "page":
                 $graphNode = $this->getFacebookBaseService()->fetchPage($id, $fields);
-                $pageWidget->setPageID($id);
-
                 break;
             case "post":
                 $graphNode = $this->getFacebookBaseService()->fetchPost($id, $fields);
@@ -93,7 +91,6 @@ class GraphController extends AbstractActionController
             case "video":
                 $graphNode = $this->getFacebookBaseService()->fetchVideo($id, $fields);
                 $graphNodeTitle = $graphNode->getField("id");
-
                 break;
             case "page_milestone":
                 $graphNode = $this->getFacebookBaseService()->fetchMilestone($id, $fields);
