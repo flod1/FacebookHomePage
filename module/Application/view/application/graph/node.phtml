@@ -15,7 +15,7 @@ $item = $graphNode;
     /* @var $item \FbBasic\GraphNodes\GraphInterface */
     $fieldnames = $item->getFieldNames();
     $edges = $item->getObjectEdges();
-    echo '"'.implode('","',$fieldnames).'"';
+    //echo '"'.implode('","',$fieldnames).'"';
     foreach ($fieldnames AS $fieldName) {
         $field = $item->getField($fieldName);
 

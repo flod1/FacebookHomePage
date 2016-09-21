@@ -186,6 +186,9 @@ class GraphController extends AbstractActionController
             case "interested":
                 $graphEdge = $this->getFacebookBaseService()->fetchInterestedsByEvent($id,$fields);
                 break;
+            case "admins":
+                $graphEdge = $this->getFacebookBaseService()->fetchAdminsByEvent($id,$fields);
+                break;
             case "reactions":
                 $graphEdge = $this->getFacebookBaseService()->fetchReactions($id,$fields);
                 break;
