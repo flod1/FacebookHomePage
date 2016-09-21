@@ -85,7 +85,7 @@ class ExampleController extends AbstractActionController
         $example['title'] = "Milestones";
         $example['describtion'] = 'Milestones by a Page';
         $example['code'] = 'echo $pageWidget->fetchAllMilestones($fields=null,$limit=null)';
-        $example['sample'] = $pageWidget->fetchAllMilestones()->render();
+        $example['sample'] = $pageWidget->fetchAllMilestones("*")->render();
 
         $examples[] = $example;
 
